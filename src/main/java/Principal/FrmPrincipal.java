@@ -4,7 +4,7 @@
  */
 package Principal;
 
-import Formulario.Home;
+import Formulario.HomeVendedor;
 import Login.Login;
 import javax.swing.JOptionPane;
 
@@ -142,7 +142,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             String passwd = String.valueOf(txtPassword.getPassword());
             
             if(log.login(user,passwd)==true){
-                Home home=new Home();
+                HomeVendedor home=new HomeVendedor();
                 home.setVisible(true);
                 this.dispose();
             }else{
