@@ -205,7 +205,7 @@ public class CrearUsuario extends javax.swing.JDialog {
             bmate=soloLetras(aMaterno);
             busuario=verifiUsuario(usuario);
             if(bnom==true && bpate==true && bmate==true && busuario==true && confirContraseña.equals(contraseña) ){
-                JOptionPane.showMessageDialog(this,"Se a creado el usuario");
+                JOptionPane.showMessageDialog(this,"Se a creado el usuariol");
                 this.dispose();
             }
             else{
