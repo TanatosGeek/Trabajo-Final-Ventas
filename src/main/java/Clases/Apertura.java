@@ -16,15 +16,13 @@ public class Apertura extends javax.swing.JDialog {
     /**
      * Creates new form Apertura
      */
-    private java.awt.Frame parent;
+    
     public Apertura(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setTitle("Apertura");
     }
-    public java.awt.Frame getPadre(){
-        return parent;
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
