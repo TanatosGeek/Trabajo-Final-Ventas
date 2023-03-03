@@ -27,6 +27,7 @@ public class HomeAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         txtNombre = new javax.swing.JLabel();
         txtUsr = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -34,6 +35,8 @@ public class HomeAdmin extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnCerrarSesion = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,6 +147,7 @@ public class HomeAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel txtNombre;
     private javax.swing.JLabel txtUsr;
     // End of variables declaration//GEN-END:variables
