@@ -5,6 +5,9 @@
 package Formulario;
 import Principal.FrmPrincipal;
 import Sesion.Sesion;
+import Clases.Apertura;
+import Clases.Ventas;
+import Clases.CorteV;
 /**
  *
  * @author mayka
@@ -16,6 +19,7 @@ public class HomeVendedor extends javax.swing.JFrame {
      */
     public HomeVendedor() {
         initComponents();
+        this.setTitle("Bienvenido a Home");
     }
 
     /**
@@ -27,29 +31,20 @@ public class HomeVendedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNombre = new javax.swing.JLabel();
-        txtUsr = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        MenuSesion = new javax.swing.JMenu();
         btnCerrarSesion = new javax.swing.JMenuItem();
+        MenuApertura = new javax.swing.JMenu();
+        btnApertura = new javax.swing.JMenuItem();
+        btnVentas = new javax.swing.JMenuItem();
+        MenuBuscar = new javax.swing.JMenu();
+        btnBuscar = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        btnCorte = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtNombre.setText("Usuario: "+Sesion.usr);
-
-        txtUsr.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtUsr.setText("Apellido paterno: "+Sesion.aPaterno);
-
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel3.setText("Apellido Materno: "+Sesion.aMaterno);
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setText("Id Usuario: "+Sesion.idUsr);
-
-        jMenu1.setText("Sesion");
+        MenuSesion.setText("Sesion");
 
         btnCerrarSesion.setText("Cerrar Sesion");
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +52,46 @@ public class HomeVendedor extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        jMenu1.add(btnCerrarSesion);
+        MenuSesion.add(btnCerrarSesion);
+
+        jMenuBar1.add(MenuSesion);
+
+        MenuApertura.setText("Apertura");
+
+        btnApertura.setText("Aperturar caja");
+        btnApertura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAperturaActionPerformed(evt);
+            }
+        });
+        MenuApertura.add(btnApertura);
+
+        btnVentas.setText("Ventas");
+        btnVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentasActionPerformed(evt);
+            }
+        });
+        MenuApertura.add(btnVentas);
+
+        jMenuBar1.add(MenuApertura);
+
+        MenuBuscar.setText("Buscar");
+
+        btnBuscar.setText("Buscar producto");
+        MenuBuscar.add(btnBuscar);
+
+        jMenuBar1.add(MenuBuscar);
+
+        jMenu1.setText("Corte");
+
+        btnCorte.setText("Corte");
+        btnCorte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCorteActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnCorte);
 
         jMenuBar1.add(jMenu1);
 
@@ -67,27 +101,11 @@ public class HomeVendedor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsr, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(176, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(txtNombre)
-                .addGap(18, 18, 18)
-                .addComponent(txtUsr)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addContainerGap(107, Short.MAX_VALUE))
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
@@ -100,49 +118,35 @@ public class HomeVendedor extends javax.swing.JFrame {
         principal.setVisible(true);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
+    private void btnAperturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAperturaActionPerformed
+        Apertura apertura=new Apertura(this,true);
+        apertura.setVisible(true);
+    }//GEN-LAST:event_btnAperturaActionPerformed
+
+    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
+        Ventas ventas=new Ventas(this,true);
+        ventas.setVisible(true);
+    }//GEN-LAST:event_btnVentasActionPerformed
+
+    private void btnCorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorteActionPerformed
+        CorteV corte=new CorteV(this,true);
+        corte.setVisible(true);
+    }//GEN-LAST:event_btnCorteActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomeVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomeVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomeVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HomeVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HomeVendedor().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MenuApertura;
+    private javax.swing.JMenu MenuBuscar;
+    private javax.swing.JMenu MenuSesion;
+    private javax.swing.JMenuItem btnApertura;
+    private javax.swing.JMenuItem btnBuscar;
     private javax.swing.JMenuItem btnCerrarSesion;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenuItem btnCorte;
+    private javax.swing.JMenuItem btnVentas;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel txtNombre;
-    private javax.swing.JLabel txtUsr;
     // End of variables declaration//GEN-END:variables
 }
