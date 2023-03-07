@@ -194,17 +194,15 @@ public class CrearUsuario extends javax.swing.JDialog {
             boolean bpate=false;
             boolean bmate=false;
             boolean busuario=false;
-            String nombre = txtNombre.getText();
-            String aPaterno = txtaPaterno.getText();
-            String aMaterno = txtaMaterno.getText();
-            String usuario = txtUsuario.getText();
+            boolean bcontra=false;
             String contraseña = String.valueOf(txtContraseña.getPassword());
             String confirContraseña = String.valueOf(txtConfirmarContraseña.getPassword());
-            bnom=soloLetras(nombre);
-            bpate=soloLetras(aPaterno);
-            bmate=soloLetras(aMaterno);
-            busuario=verifiUsuario(usuario);
-            if(bnom==true && bpate==true && bmate==true && busuario==true && confirContraseña.equals(contraseña) ){
+            bnom=soloLetras(txtNombre.getText());
+            bpate=soloLetras(txtaPaterno.getText());
+            bmate=soloLetras(txtaMaterno.getText());
+            busuario=verifiUsuario(txtUsuario.getText());
+            bcontra=verifiContra(confirContraseña);
+            if(bnom==true && bpate==true && bmate==true && busuario==true && confirContraseña.equals(contraseña) && bcontra==true){
                 JOptionPane.showMessageDialog(this,"Se a creado el usuario");
                 this.dispose();
             }
@@ -227,6 +225,13 @@ public class CrearUsuario extends javax.swing.JDialog {
         return false;
     }
     private boolean verifiUsuario(String letras){
+        letras=letras.trim();
+        if(letras.matches("[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,30}") && letras.length()>0){
+            return true;
+        }       
+        return false;
+    }
+    private boolean verifiContra(String letras){
         letras=letras.trim();
         if(letras.matches("[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,30}") && letras.length()>0){
             return true;
