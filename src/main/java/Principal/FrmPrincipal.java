@@ -6,6 +6,7 @@ package Principal;
 
 import Formulario.HomeVendedor;
 import Login.Login;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() {
         initComponents();
+        
+        
     }
 
     /**

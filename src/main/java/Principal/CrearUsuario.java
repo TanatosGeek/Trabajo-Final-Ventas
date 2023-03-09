@@ -5,7 +5,6 @@
 package Principal;
 
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author mayka
@@ -233,7 +232,7 @@ public class CrearUsuario extends javax.swing.JDialog {
     }
     private boolean verifiContra(String letras){
         letras=letras.trim();
-        if(letras.matches("[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,30}") && letras.length()>0){
+        if(letras.matches("[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ@_ ]{1,30}") && letras.length()>0){
             return true;
         }       
         return false;
